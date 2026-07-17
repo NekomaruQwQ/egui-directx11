@@ -34,12 +34,12 @@ struct DemoState {
 }
 
 impl DemoState {
-    fn ui(&mut self, ctx: &egui::Context) {
+    fn ui(&mut self, ui: &mut egui::Ui) {
         let args = env::args().skip(1).collect::<Vec<_>>();
         let args = args.iter().map(String::as_str).collect::<Vec<_>>();
         match &args[..] {
-            [] => self.egui_demo.ui(ctx),
-            ["color-test"] => self.color_test(ctx),
+            [] => self.egui_demo.ui(ui),
+            ["color-test"] => self.color_test(ui.ctx()),
             _ => panic!("Unknown arguments: {:?}", args),
         }
     }
@@ -156,8 +156,8 @@ impl DemoApp {
     fn render(&mut self, window: &Window) {
         if let Some(render_target) = &self.render_target {
             let egui_input = self.egui_winit.take_egui_input(window);
-            let egui_output = self.egui_ctx.run(egui_input, |ctx| {
-                self.state.ui(ctx);
+            let egui_output = self.egui_ctx.run_ui(egui_input, |ui| {
+                self.state.ui(ui);
             });
             let (renderer_output, platform_output, _) =
                 egui_directx11::split_output(egui_output);
