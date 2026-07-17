@@ -16,7 +16,7 @@ targets = ["x86_64-pc-windows-msvc"]
 
 [dependencies]
 log = "0.4.28"
-egui = "0.33.0"
+egui = "0.35.0"
 windows = { version = "0.62.2", features = [
     "Win32_Graphics_Dxgi_Common",
     "Win32_Graphics_Direct3D",
@@ -24,8 +24,8 @@ windows = { version = "0.62.2", features = [
 ]}
 
 [dev-dependencies]
-egui_demo_lib = "0.33.0"
-egui-winit = { version = "0.33.0", default-features = false }
+egui_demo_lib = "0.35.0"
+egui-winit = { version = "0.35.0", default-features = false }
 pretty_env_logger = "0.5.0"
 winit = { version = "0.30.11", default-features = false, features = ["rwh_06"] }
 jpeg-decoder = { version = "0.3.2" }

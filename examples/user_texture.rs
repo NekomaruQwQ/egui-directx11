@@ -163,8 +163,8 @@ impl DemoApp {
     fn render(&mut self, window: &Window) {
         if let Some(render_target) = &self.render_target {
             let egui_input = self.egui_winit.take_egui_input(window);
-            let egui_output = self.egui_ctx.run(egui_input, |ctx| {
-                CentralPanel::default().show(ctx, |ui| {
+            let egui_output = self.egui_ctx.run_ui(egui_input, |ui| {
+                CentralPanel::default().show(ui, |ui| {
                     let image = Image::from_texture((
                         self.tex,
                         Vec2::new(1920.0, 1080.0),
