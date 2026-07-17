@@ -372,7 +372,7 @@ dependencies = [
 
 [[package]]
 name = "egui-directx11"
-version = "0.12.1"
+version = "0.13.0+egui-0.35.0"
 dependencies = [
  "egui",
  "egui-winit",

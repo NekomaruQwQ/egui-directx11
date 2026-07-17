@@ -127,7 +127,14 @@ impl App for DemoApp {
 
         let tex = tex.unwrap();
         let mut shader_resource_view = None;
-        unsafe { device.CreateShaderResourceView(&tex, None, Some(&raw mut shader_resource_view)) }.unwrap();
+        unsafe {
+            device.CreateShaderResourceView(
+                &tex,
+                None,
+                Some(&raw mut shader_resource_view),
+            )
+        }
+        .unwrap();
         let srv = shader_resource_view.unwrap();
         let id = egui_renderer.register_user_texture(srv);
 

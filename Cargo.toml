@@ -1,6 +1,6 @@
 [package]
 name = "egui-directx11"
-version = "0.12.1"
+version = "0.13.0+egui-0.35.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 
@@ -15,7 +15,7 @@ keywords = ["gui", "egui", "dx11", "d3d11", "directx11"]
 targets = ["x86_64-pc-windows-msvc"]
 
 [dependencies]
-log = "0.4.28"
+log = "0.4.33"
 egui = "0.35.0"
 windows = { version = "0.62.2", features = [
     "Win32_Graphics_Dxgi_Common",
@@ -27,5 +27,5 @@ windows = { version = "0.62.2", features = [
 egui_demo_lib = "0.35.0"
 egui-winit = { version = "0.35.0", default-features = false }
 pretty_env_logger = "0.5.0"
-winit = { version = "0.30.11", default-features = false, features = ["rwh_06"] }
+winit = { version = "0.30.13", default-features = false, features = ["rwh_06"] }
 jpeg-decoder = { version = "0.3.2" }
